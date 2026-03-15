@@ -207,6 +207,4 @@ marimo/_lsp/
 __marimo__/
 
 
-
-anki_handler/audio/
-anki_handler/sentence/
+anki_handler/

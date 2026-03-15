@@ -323,7 +323,7 @@ def store_audio_in_anki(
     return f"[sound:{filename}]"
 
 
-def build_example_sentence(word: str, model: str, num_sentences: int = 3) -> str:
+def build_example_sentence(word: str, model: str, num_sentences: int = 1) -> str:
     from langchain_core.prompts import ChatPromptTemplate
     from langchain_openai import ChatOpenAI
 
@@ -489,7 +489,7 @@ def main() -> int:
     skipped = 0
 
     # Phase 1: generate assets to local folders
-    num_sentences = int(os.getenv("ANKI_NUM_SENTENCES", "3"))
+    num_sentences = int(os.getenv("ANKI_NUM_SENTENCES", "1"))
     for note_id, fields in iter_notes(target_notes, config.limit):
         try:
             generate_assets(
